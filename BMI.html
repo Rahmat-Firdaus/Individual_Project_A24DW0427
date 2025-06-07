@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BMI Checker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
+  <style>
+    body{
+        background-image: url(https://i.pinimg.com/originals/fc/ce/be/fccebe7daf018850e095d9962cadebff.gif);
+        background-size: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+        text-align: center;
+        font-size: xx-large;
+        margin: auto;
+        font-family: "Sixtyfour";
+        color: rgb(247, 247, 247);
+        text-shadow: 3px 3px black;
+    }
+    .tools-header {
+      background-color: rgba(50, 28, 28, 0.561);
+      padding: 40px 0;
+    }
+    .bmi-form {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px white;
+      width: 300px;
+      margin: 8px auto;
+    }
+
+    .bmi-form input, .bmi-form button {
+      font-size: 16px;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+      border: none;
+      width: 80%;
+      font-family: "Jersey 20";
+      font-size: larger;
+    }
+
+    .bmi-form button {
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    #result {
+      font-weight: bold;
+      font-size: 18px;
+      color: white;
+      text-shadow: 1px 1px black;
+      margin-top: 15px;
+    }
+  </style>
+  <script>
+    function checkBMI() {
+      let weight = parseFloat(document.getElementById("weight").value);
+      let height = parseFloat(document.getElementById("height").value) / 100;
+      let bmi = weight / (height * height);
+      let category = "";
+
+      if (bmi < 18.5){
+      category = "Underweight";
+      }else if (bmi < 24.9){ 
+      category = "Normal";
+      }else if (bmi < 29.9){
+      category = "Overweight";
+      }else{ 
+      category = "Obesity";
+      }
+
+      document.getElementById('result').innerText = "BMI anda ialah: " + bmi.toFixed(2) + " (" + category + ")";
+    }
+  </script>
+</head>
+<body>
+  <div class="tools-header">
+  <h1>BMI Checker</h1></div>
+  <div class="bmi-form">
+  <input type="number" id="weight" placeholder="Weight in kg">
+  <input type="number" id="height" placeholder="Height in cm">
+  <br><br>
+  <button onclick="checkBMI()">Check BMI</button>
+  <p id="result">BMI:</p>
+  </div>
+</body>
+</html>

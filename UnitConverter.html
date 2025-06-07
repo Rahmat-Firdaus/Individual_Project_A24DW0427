@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit Converter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+    body{
+        background-image: url(https://i.redd.it/fisnfas5ip7c1.gif);
+        background-size: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
+    h1{
+        text-align: center;
+        font-family: "Pixelify Sans";
+        text-shadow: 5px 3px rgb(0, 0, 0);
+        font-size: 45px;
+        color: rgb(62, 201, 201);
+    }
+    .tools-header {
+      background-color: rgba(76, 12, 107, 0.561);
+      padding: 40px 0;
+      top: 0;
+      width: 100%;
+    }
+    input, button {
+      font-size: 18px;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 10px;
+      border: none;
+      width: 200px;
+      font-family: "Jersey 20";
+      font-size: larger;
+    }
+
+    input[readonly] {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    button {
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    .UnitConverter-container {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px white;
+      width: 300px;
+      margin: 1px auto;
+    }
+     #result {
+      font-weight: bold;
+      font-size: 18px;
+      color: white;
+      text-shadow: 1px 1px black;
+      margin-top: 15px;
+      
+    }
+  </style>
+  <script>
+   function convert(type) {
+      const input = Number(document.getElementById("inputValue").value);
+      let result = 0;
+
+      switch (type) {
+        case 'cmToM':
+          result = input / 100;
+          document.getElementById("result").innerText = input + " cm = " + result + " meter";
+          break;
+        case 'mToCm':
+          result = input * 100;
+          document.getElementById("result").innerText = input + " meter = " + result + " cm";
+          break;
+        case 'mToKm':
+          result = input / 1000;
+          document.getElementById("result").innerText = input + " meter = " + result + " km";
+          break;
+        case 'kmToM':
+          result = input * 1000;
+          document.getElementById("result").innerText = input + " km = " + result + " meter";
+          break;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="tools-header">
+  <h1>Unit Converter</h1></div>
+  <div class="UnitConverter-container">
+  <input type="number" id="inputValue" placeholder="Enter value">
+  <br><br>
+  <button onclick="convert('cmToM')">cm to metre</button>
+  <button onclick="convert('mToCm')">metre to cm</button>
+  <button onclick="convert('mToKm')">metre to km</button>
+  <button onclick="convert('kmToM')">km to metre</button>
+  <p id="result">Result:</p>
+  </div>
+</body>
+</html>

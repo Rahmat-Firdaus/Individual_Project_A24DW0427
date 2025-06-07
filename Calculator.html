@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+    body{
+        background-image: url(https://cdn.sanity.io/images/hpvpbfax/production/08b2b076d53dbe0d1aef7f4e1579f3a37dd321db-1920x1080.gif);
+        background-size: 100%;
+        overflow: hidden;
+    }
+    h1{
+        text-align: center;
+        font-family: "Pixelify Sans";
+        color: white;
+        font-size: 50px;
+        text-shadow: 2px 3px rgb(227, 39, 234);
+        margin: 0;
+    }
+    .tools-header {
+      background-color: rgba(50, 28, 28, 0.561);
+      padding: 40px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    .calculator-container {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px white;
+      width: 300px;
+      margin: 144px auto;
+    }
+
+
+    input, button {
+      font-size: 18px;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+      border: none;
+      width: 200px;
+      font-family: "Jersey 20";
+      font-size: larger;
+    }
+
+    input[readonly] {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    button {
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+</style>
+<script>
+    function math(operation){
+        let no1= parseFloat(document.getElementById("no1").value);
+        let no2= parseFloat(document.getElementById("no2").value);
+        let Result= document.getElementById("result");
+        if(operation == "ADD"){
+        Result.value=no1+no2;
+        }else if(operation == "SUBTRACT"){
+        Result.value=no1-no2;
+        }else if(operation == "DIVIDE"){
+        Result.value=no1/no2;
+        }else if(operation == "MULTIPLY"){
+        Result.value=no1*no2;
+        }else if(operation == "CLEAR"){
+        document.getElementById("no1").value = "";
+        document.getElementById("no2").value = "";
+        document.getElementById("result").value = "";
+    }
+}
+</script>
+<title>Simple Calculator</title>
+</head>
+<body>
+    <div class="tools-header">
+    <h1>SIMPLE CALCULATOR</h1></div>
+    <div class="calculator-container">
+    <input type="number" id="no1" placeholder="NUMBER 1">
+    <input type="number" id="no2" placeholder="NUMBER 2">
+    <input type="number" id="result" placeholder="ANSWER" readonly>
+    <button onclick="math('ADD')">ADD</button>
+    <button onclick="math('SUBTRACT')">SUBTRACT</button>
+    <button onclick="math('MULTIPLY')">MULTIPLY</button>
+    <button onclick="math('DIVIDE')">DIVIDE</button><br>
+    <br>
+    <button onclick="math('CLEAR')">CLEAR</button>
+    </div>
+</body>
+</html>
