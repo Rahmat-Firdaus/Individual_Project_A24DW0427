@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tools Page</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+body{
+    background-image: url(https://i.pinimg.com/originals/99/8e/05/998e055aba57c24138220937cc5166ab.gif);
+    background-size: 100%;
+}
+h1 {
+    background: linear-gradient(
+        to right,
+        #ff0808 20%,
+        #ddfa00 30%,
+        #01f2ff 70%,
+        #34ff01 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+    font-family: Pixelify Sans;
+    text-align: center;
+    font-size: 55px;
+
+}
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+.tools-header {
+      background-color: rgba(0, 0, 0, 0.492);
+      padding: 20px 0;
+    }
+li{
+    background-color: rgba(52, 13, 92, 0.686);
+    border: 2px dotted rgb(255, 255, 255);
+    margin: 0px auto;
+      width: 100%;
+      max-width: 700px;}
+li:hover {
+  font-size: 30px;
+  transition-delay: 0s, 0s;
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transform: scale(1.1);
+  transition: all 0.1s linear; 
+  transition-delay: 0.1s, 0s;
+}
+p:hover {
+  font-size: 30px;
+  transition-delay: 0s, 0s;
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transform: scale(1.1);
+  transition: all 0.1s linear; 
+  transition-delay: 0.1s, 0s;
+}
+</style>
+</head>
+<body>
+  <div class="tools-header">
+  <h1>Tools</h1></div>
+  <p style="text-align: center; font-family: Audiowide, sans-serif; font-size: xx-large; color: white; text-shadow: 2px 3px black;"><a href="Index.html">Home</a></p>
+
+  <ul style="text-align: center; list-style-position: inside; padding-left: 0; color: aqua; font-family: Pixelify Sans; font-size: xx-large; text-shadow: 2px 3px black;">
+  <li><a href="Calculator.html">Simple Calculator</a></li>
+  <li><a href="BMI.html">BMI Checker</a></li>
+  <li><a href="IncomeTax.html">Income Tax Calculator</a></li>
+  <li><a href="UnitConverter.html">Unit Converter</a></li>
+  </ul>
+</body>
+</html>
